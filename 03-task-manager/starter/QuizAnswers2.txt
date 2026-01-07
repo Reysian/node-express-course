@@ -1,0 +1,5 @@
+1. The asyncWrapper function was created to handle errors thrown by the controllers without requiring a try/catch for every controller function.
+2. This answer depends. If we have not written a function to create errors for us, then we would use:
+    return next (new CustomAPIError(`No task with id: ${taskID}`, 404));
+However, if we did create a function to do so, then we would use:
+    return next(createCustomError(`No task with id: ${taskID}`, 404));
